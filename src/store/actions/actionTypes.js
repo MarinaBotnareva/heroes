@@ -14,6 +14,9 @@ const actions = {
     PATCH_HERO_REQUEST: 'patchHeroRequest',
     PATCH_HERO_SUCCESS: 'patchHeroSuccess',
     PATCH_HERO_ERROR: 'patchHeroError',
+
+    INCREMENT: 'increment',
+    DECREMENT: 'decrement',
 };
 
 export default actions;

@@ -59,3 +59,12 @@ export const patchHeroError = (...payload) => ({
     type: actions.PATCH_HERO_ERROR,
     ...payload,
 });
+
+export const incrementAction = (payload) => {
+    return { type: actions.INCREMENT, payload };
+  };
+  
+  export const decreaseAction = (payload) => ({
+    type: actions.DECREMENT,
+    payload,
+  });

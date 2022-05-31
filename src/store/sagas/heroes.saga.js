@@ -12,6 +12,7 @@ export function* heroesSaga() {
 }
 
 export function* getHeroesSaga(action) {
+    console.log(action)
     try {
         const response = yield call(HeroApi.getHeroesAsync, action.payload);
         yield put(getHeroesSuccess(response));

@@ -1,7 +1,7 @@
 import React, {useMemo, useEffect, useState} from 'react';
 import { bindActionCreators } from 'redux';
 import { useDispatch, useSelector } from 'react-redux';
-import { getHeroesRequest, createHeroRequest, deleteHeroRequest, patchHeroRequest } from '../../store/actions/actionCreators';
+import { getHeroesRequest, createHeroRequest, deleteHeroRequest, patchHeroRequest, incrementAction, decreaseAction } from '../../store/actions/actionCreators';
 
 function HeroPage (props) {
     const heroes = useSelector(state => state.heroes);
@@ -25,15 +25,38 @@ function HeroPage (props) {
                     getHeroesRequest,
                     createHeroRequest,
                     deleteHeroRequest,
-                    patchHeroRequest
+                    patchHeroRequest,
+                    incrementAction,
+                    decreaseAction
                 },
                 dispatch
             ),
         [dispatch]
     );
 
+    function loadHeroes () {
+      const page = heroes.page;
+      actions.getHeroesRequest(page);
+    }
+
+    function loadPage (e) {
+      
+        const newPage = e.target.name === 'next' 
+        ? Math.min(actions.incrementAction(), 5) 
+        : Math.max(actions.decreaseAction(), 1);
+
+        if(heroes.page !== newPage){
+          loadHeroes();
+        }
+
+        return heroes.page
+        
+      } 
+
     useEffect(() => {
-      actions.getHeroesRequest();
+       if(0 !== heroes.page){
+        loadHeroes();
+      }
   }, [actions]);
 
     function onSubmit (e) {
@@ -56,7 +79,7 @@ function HeroPage (props) {
     function handlePatcheHero (id, args) {
       actions.patchHeroRequest({payload: {id, args}})
     }
-    
+    console.log(heroes.list.length)
     return (
         <div>
           <form>
@@ -102,7 +125,9 @@ function HeroPage (props) {
                 Get Heroes
             </button>
           </form>
-          
+          <button name='prev' onClick={loadPage}>{'<'}</button>
+    {heroes.page}
+    <button name='next' onClick={loadPage}>{'>'}</button>
             <ul>
                 {heroes.list.map(h => (
                     <li key={h.id}>
@@ -120,12 +145,3 @@ function HeroPage (props) {
 }
 
 export default HeroPage;
-
-
-    
-  
-    
-  
-    
-  
-   

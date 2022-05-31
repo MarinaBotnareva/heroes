@@ -4,6 +4,7 @@ export const heroesState = {
     list: [],
     isLoading: false,
     error: null,
+    page: 1,
 };
 
 export const heroesReducer = (state = heroesState, action) => {
@@ -50,6 +51,13 @@ export const heroesReducer = (state = heroesState, action) => {
             };
         }
 
+        case actions.INCREMENT: {
+            return { ...state, page: state.page + 1 };
+        } 
+
+        case actions.DECREMENT: {
+            return { ...state, page: state.page - 1 };   
+        } 
 
         default: {
             return state;

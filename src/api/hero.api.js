@@ -2,8 +2,9 @@ import { httpClient } from '.';
 
 const path = '/heroes';
 
-export const getHeroesAsync = async () => {
-    const response = await httpClient.get(`${path}`);
+export const getHeroesAsync = async (payload, filter = { _page: `${payload}`, _limit: 10 }) => {
+    console.log(payload)
+    const response = await httpClient.get(`${path}`, { params: filter });
 
     return response.data;
 };
