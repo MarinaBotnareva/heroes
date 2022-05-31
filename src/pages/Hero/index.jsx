@@ -40,25 +40,23 @@ function HeroPage (props) {
     }
 
     function loadnextPage () {
-      
-        if (heroes.page < heroes.list.length){
-        actions.incrementAction()
-        loadHeroes();
-        } 
+      if (heroes.list.length === 10){
+        actions.incrementAction();
+        actions.getHeroesRequest(heroes.page+1)
+      } 
       } 
 
       function loadprevPage () {
-      
         if (heroes.page > 1){
-        actions.decreaseAction()
-        loadHeroes();
+          actions.decreaseAction();
         } 
+        if (heroes.page-1 !== 0){
+        actions.getHeroesRequest(heroes.page-1)
+        }
       } 
 
     useEffect(() => {
-       if(0 !== heroes.page){
         loadHeroes();
-      }
   }, [actions]);
 
     function onSubmit (e) {
@@ -81,7 +79,7 @@ function HeroPage (props) {
     function handlePatcheHero (id, args) {
       actions.patchHeroRequest({payload: {id, args}})
     }
-    console.log(heroes.list.length)
+    
     return (
         <div>
           <form>
@@ -127,9 +125,9 @@ function HeroPage (props) {
                 Get Heroes
             </button>
           </form>
-          <button name='prev' onClick={loadprevPage}>{'<'}</button>
+          <button name='prev' onClick={()=>{loadprevPage()}}>{'<'}</button>
     {heroes.page}
-    <button name='next' onClick={loadnextPage}>{'>'}</button>
+    <button name='next' onClick={()=>{loadnextPage()}}>{'>'}</button>
             <ul>
                 {heroes.list.map(h => (
                     <li key={h.id}>
