@@ -39,18 +39,20 @@ function HeroPage (props) {
       actions.getHeroesRequest(page);
     }
 
-    function loadPage (e) {
+    function loadnextPage () {
       
-        const newPage = e.target.name === 'next' 
-        ? Math.min(actions.incrementAction(), 5) 
-        : Math.max(actions.decreaseAction(), 1);
+        if (heroes.page < heroes.list.length){
+        actions.incrementAction()
+        loadHeroes();
+        } 
+      } 
 
-        if(heroes.page !== newPage){
-          loadHeroes();
-        }
-
-        return heroes.page
-        
+      function loadprevPage () {
+      
+        if (heroes.page > 1){
+        actions.decreaseAction()
+        loadHeroes();
+        } 
       } 
 
     useEffect(() => {
@@ -125,9 +127,9 @@ function HeroPage (props) {
                 Get Heroes
             </button>
           </form>
-          <button name='prev' onClick={loadPage}>{'<'}</button>
+          <button name='prev' onClick={loadprevPage}>{'<'}</button>
     {heroes.page}
-    <button name='next' onClick={loadPage}>{'>'}</button>
+    <button name='next' onClick={loadnextPage}>{'>'}</button>
             <ul>
                 {heroes.list.map(h => (
                     <li key={h.id}>
