@@ -39,9 +39,8 @@ export function* deleteHeroSaga(action) {
 }
 
 export function* patchHeroSaga(action) {
-    console.log(action)
     try {
-        const response = yield call(HeroApi.patchHeroAsync, action.payload);
+        const response = yield call(HeroApi.patchHeroAsync, action[0].payload);
         yield put(patchHeroSuccess(response));
     } catch (error) {
         yield put(patchHeroError(error));

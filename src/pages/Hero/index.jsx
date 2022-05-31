@@ -12,7 +12,7 @@ function HeroPage (props) {
         origin: '',
         description: '',
         image: ''
-      });
+      });      
       
     function handleChange ({ target: { name, value } }) {
         setForm(s => ({ ...s, [name]: value }))
@@ -53,8 +53,8 @@ function HeroPage (props) {
       actions.deleteHeroRequest(index)
     }
 
-    function handlePatcheHero (index, key, args) {
-      actions.patchHeroRequest(index, key, args)
+    function handlePatcheHero (id, args) {
+      actions.patchHeroRequest({payload: {id, args}})
     }
     
     return (
@@ -102,6 +102,7 @@ function HeroPage (props) {
                 Get Heroes
             </button>
           </form>
+          
             <ul>
                 {heroes.list.map(h => (
                     <li key={h.id}>
@@ -110,7 +111,7 @@ function HeroPage (props) {
                         </div>
                         <img src={h.image}  alt='photo'/>
                         <button onClick={()=>{handleDeleteHero(h.id)}}>X</button>
-                        <button onClick={()=>{handlePatcheHero(h.id, 'nickname', 'Получилось')}}>Y</button>
+                        <button onClick={()=>{handlePatcheHero(h.id, formData)}}>Y</button>
                     </li>
                 ))}
             </ul>

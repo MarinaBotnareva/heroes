@@ -2,8 +2,8 @@ import { httpClient } from '.';
 
 const path = '/heroes';
 
-export const getHeroesAsync = async (filter = { _page: 1, _limit: 10 }) => {
-    const response = await httpClient.get(`${path}`, { params: filter });
+export const getHeroesAsync = async () => {
+    const response = await httpClient.get(`${path}`);
 
     return response.data;
 };
@@ -20,8 +20,9 @@ export const deleteHeroAsync = async (payload) => {
     return response.data;
 };
 
-export const patchHeroAsync = async (payload, args) => {
-    const response = await httpClient.patch(`${path}/${payload}`, args);
+export const patchHeroAsync = async (...payload) => {
+    console.log(payload[0].id)
+    const response = await httpClient.patch(`${path}/${payload[0].id}`, payload[0].args);
 
     return response.data;
 };

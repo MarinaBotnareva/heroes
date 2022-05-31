@@ -45,17 +45,17 @@ export const deleteHeroError = (payload) => ({
     payload,
 });
 
-export const patchHeroRequest = (payload) => ({
+export const patchHeroRequest = (...payload) => ({
     type: actions.PATCH_HERO_REQUEST,
-    payload,
+    ...payload,
 });
 
-export const patchHeroSuccess = (payload) => ({
+export const patchHeroSuccess = (...payload) => ({
     type: actions.PATCH_HERO_SUCCESS,
-    payload,
+    ...payload,
 });
 
-export const patchHeroError = (payload, key, args) => ({
+export const patchHeroError = (...payload) => ({
     type: actions.PATCH_HERO_ERROR,
-    payload, key, args,
+    ...payload,
 });

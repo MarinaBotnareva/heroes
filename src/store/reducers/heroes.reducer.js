@@ -46,7 +46,7 @@ export const heroesReducer = (state = heroesState, action) => {
                 ...state,
                 isLoading: false,
                 list: state.list.map((hero, i) => 
-                i === action.payload ? {...hero, [action.key] : action.args} : hero),
+                i === action.payload.id ? {...hero, ...action.payload.args} : hero),
             };
         }
 
