@@ -12,10 +12,21 @@ function HeroPage (props) {
         origin: '',
         description: '',
         image: ''
-      });      
+      });  
+    const [edits, setEdits] = useState({ })      
       
     function handleChange ({ target: { name, value } }) {
         setForm(s => ({ ...s, [name]: value }))
+      }
+
+      function startEditing ({ target: { name }}) {
+        const result = heroes.list.map((hero)=>{if(hero.id === Number(name)){ return hero}});
+        const hero = result.filter(n => n)
+        setEdits(s => ({...s, ...hero[0]}));
+      }
+
+      function handleEdit ({ target: { name, value } }) {
+        setEdits(s => ({ ...s, [name]: value }))
       }
 
       const actions = useMemo(
@@ -40,7 +51,7 @@ function HeroPage (props) {
     }
 
     function loadnextPage () {
-      if (heroes.list.length === 10){
+      if (heroes.list.length >= 10){
         actions.incrementAction();
         actions.getHeroesRequest(heroes.page+1)
       } 
@@ -130,17 +141,56 @@ function HeroPage (props) {
     <button name='next' onClick={()=>{loadnextPage()}}>{'>'}</button>
             <ul>
                 {heroes.list.map(h => (
+                 
                     <li key={h.id}>
                         <div>
                         {h.nickname} ({h.realName})
                         </div>
                         <img src={h.image}  alt='photo'/>
                         <button onClick={()=>{handleDeleteHero(h.id)}}>X</button>
-                        <button onClick={()=>{handlePatcheHero(h.id, formData)}}>Y</button>
+                        <button name={h.id} onClick={startEditing}>edit</button>
                     </li>
                 ))}
             </ul>
-        </div>
+            <form>
+              <input
+                type='text'
+                name='nickname'
+                placeholder='nickname'
+                value={edits.nickname}
+                onChange={handleEdit}
+              />
+              <input
+                type='text'
+                name='realName'
+                placeholder='realName'
+                value={edits.realName}
+                onChange={handleEdit}
+              />
+              <input
+                type='text'
+                name='origin'
+                placeholder='origin'
+                value={edits.origin}
+                onChange={handleEdit}
+              />
+              <input
+                type='text'
+                name='description'
+                placeholder='description'
+                value={edits.description}
+                onChange={handleEdit}
+              />
+              <input
+                type='text'
+                name='image'
+                placeholder='image URL'
+                value={edits.image}
+                onChange={handleEdit}
+              />
+              <button onClick={()=>{handlePatcheHero(edits.id, edits)}}>Y</button>
+        </form>
+      </div>
     );
 }
 

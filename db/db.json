@@ -8,47 +8,47 @@
       "description": "Superman was born on the fictional planet Krypton and was named Kal-El. As a baby, his parents sent him to Earth in a small spaceship moments before Krypton was destroyed in a natural cataclysm."
     },
     {
-      "nickname": "Spiderman",
-      "realName": "Peter",
+      "nickname": "Spider-Man",
+      "realName": "Peter Parker",
       "origin": "",
       "description": "",
       "image": "",
       "id": 2
     },
     {
-      "nickname": "SuperWoman",
-      "realName": "Noname",
+      "nickname": "Iron Man",
+      "realName": "Anthony Edward \"Tony\" Stark",
       "origin": "",
       "description": "",
       "image": "",
       "id": 3
     },
     {
-      "nickname": "Марина",
-      "realName": "",
+      "nickname": "Captain America",
+      "realName": "Steven Rogers",
       "origin": "",
       "description": "",
       "image": "",
       "id": 4
     },
     {
-      "nickname": "Вова",
-      "realName": "",
+      "nickname": "Hulk",
+      "realName": "Dr. Robert Bruce Banner",
       "origin": "",
       "description": "",
       "image": "",
       "id": 5
     },
     {
-      "nickname": "Женя",
-      "realName": "",
+      "nickname": "Deadpool",
+      "realName": "Wade Winston Wilson",
       "origin": "",
       "description": "",
       "image": "",
       "id": 6
     },
     {
-      "nickname": "Андрей",
+      "nickname": "dfvgbnm,",
       "realName": "",
       "origin": "",
       "description": "",
@@ -56,7 +56,7 @@
       "id": 7
     },
     {
-      "nickname": "2",
+      "nickname": "sdfghjkl",
       "realName": "",
       "origin": "",
       "description": "",
@@ -64,7 +64,7 @@
       "id": 8
     },
     {
-      "nickname": "3",
+      "nickname": "asdfghjk",
       "realName": "",
       "origin": "",
       "description": "",
@@ -72,7 +72,7 @@
       "id": 9
     },
     {
-      "nickname": "4",
+      "nickname": "Johnathon Blaze",
       "realName": "",
       "origin": "",
       "description": "",
@@ -80,7 +80,7 @@
       "id": 10
     },
     {
-      "nickname": "5",
+      "nickname": "fghnjmk,",
       "realName": "",
       "origin": "",
       "description": "",
@@ -88,60 +88,12 @@
       "id": 11
     },
     {
-      "nickname": "а",
-      "realName": "",
+      "nickname": "Ghost Rider",
+      "realName": "Johnathon Blaze",
       "origin": "",
       "description": "",
       "image": "",
       "id": 12
-    },
-    {
-      "nickname": "т",
-      "realName": "",
-      "origin": "",
-      "description": "",
-      "image": "",
-      "id": 13
-    },
-    {
-      "nickname": "м",
-      "realName": "",
-      "origin": "",
-      "description": "",
-      "image": "",
-      "id": 14
-    },
-    {
-      "nickname": "п",
-      "realName": "",
-      "origin": "",
-      "description": "",
-      "image": "",
-      "id": 15
-    },
-    {
-      "nickname": "р",
-      "realName": "",
-      "origin": "",
-      "description": "",
-      "image": "",
-      "id": 16
-    },
-    {
-      "nickname": "в",
-      "realName": "",
-      "origin": "",
-      "description": "",
-      "image": "",
-      "id": 17
-    },
-    {
-      "nickname": "ы",
-      "realName": "",
-      "origin": "",
-      "description": "",
-      "image": "",
-      "id": 18
     }
   ]
 }
