@@ -13,7 +13,7 @@ function HeroPage (props) {
         description: '',
         image: ''
       });  
-    const [edits, setEdits] = useState({ })      
+    const [edits, setEdits] = useState({show: false })      
       
     function handleChange ({ target: { name, value } }) {
         setForm(s => ({ ...s, [name]: value }))
@@ -22,7 +22,7 @@ function HeroPage (props) {
       function startEditing ({ target: { name }}) {
         const result = heroes.list.map((hero)=>{if(hero.id === Number(name)){ return hero}});
         const hero = result.filter(n => n)
-        setEdits(s => ({...s, ...hero[0]}));
+        setEdits(s => ({...s, ...hero[0], show: true}));
       }
 
       function handleEdit ({ target: { name, value } }) {
@@ -152,7 +152,7 @@ function HeroPage (props) {
                     </li>
                 ))}
             </ul>
-            <form>
+            <form className={edits.show === true ? 'editForm' : 'hide'}>
               <input
                 type='text'
                 name='nickname'
