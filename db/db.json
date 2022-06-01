@@ -32,14 +32,6 @@
       "id": 4
     },
     {
-      "nickname": "Hulk",
-      "realName": "Dr. Robert Bruce Banner",
-      "origin": "",
-      "description": "",
-      "image": "",
-      "id": 5
-    },
-    {
       "nickname": "Deadpool",
       "realName": "Wade Winston Wilson",
       "origin": "",
@@ -48,28 +40,22 @@
       "id": 6
     },
     {
-      "nickname": "dfvgbnm,",
+      "nickname": "Hulk",
       "realName": "",
       "origin": "",
       "description": "",
       "image": "",
-      "id": 7
+      "id": 7,
+      "show": true
     },
     {
-      "nickname": "sdfghjkl",
+      "nickname": "Дед Мороз",
       "realName": "",
       "origin": "",
       "description": "",
       "image": "",
-      "id": 8
-    },
-    {
-      "nickname": "asdfghjk",
-      "realName": "",
-      "origin": "",
-      "description": "",
-      "image": "",
-      "id": 9
+      "id": 8,
+      "show": true
     },
     {
       "nickname": "Супергерой",
@@ -96,6 +82,14 @@
       "description": "",
       "image": "",
       "id": 12
+    },
+    {
+      "nickname": "Чебурашка",
+      "realName": "",
+      "origin": "",
+      "description": "",
+      "image": "",
+      "id": 13
     }
   ]
 }

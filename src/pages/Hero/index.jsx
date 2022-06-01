@@ -53,7 +53,6 @@ function HeroPage (props) {
     function loadnextPage () {
       if (heroes.list.length >= 10){
         actions.incrementAction();
-        actions.getHeroesRequest(heroes.page+1)
       } 
       } 
 
@@ -61,14 +60,11 @@ function HeroPage (props) {
         if (heroes.page > 1){
           actions.decreaseAction();
         } 
-        if (heroes.page-1 !== 0){
-        actions.getHeroesRequest(heroes.page-1)
-        }
       } 
 
     useEffect(() => {
         loadHeroes();
-  }, [actions]);
+  }, [actions, heroes.page, heroes.list]);
 
     function onSubmit (e) {
       e.preventDefault();
