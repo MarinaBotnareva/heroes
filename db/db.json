@@ -49,15 +49,6 @@
       "show": true
     },
     {
-      "nickname": "Дед Мороз",
-      "realName": "",
-      "origin": "",
-      "description": "",
-      "image": "",
-      "id": 8,
-      "show": true
-    },
-    {
       "nickname": "Супергерой",
       "realName": "",
       "origin": "",
@@ -71,7 +62,7 @@
       "realName": "Johnathon Blaze",
       "origin": "",
       "description": "",
-      "image": "",
+      "image": "https://m.media-amazon.com/images/I/51JFmEv4syL._AC_.jpg",
       "id": 12,
       "show": true
     },
