@@ -47,6 +47,7 @@ function EditForm (props) {
         value={props.edits.image}
         onChange={handleEdit}
       />
+      <img src={props.edits.image}  alt='photo'/>
       <button onClick={()=>{handlePatcheHero(props.edits.id, props.edits)}}>Y</button>
     </form>
   )

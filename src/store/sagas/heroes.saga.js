@@ -7,6 +7,7 @@ export function* heroesSaga() {
     yield takeLatest(actions.GET_HEROES_REQUEST, getHeroesSaga);
     yield takeLatest(actions.CREATE_HERO_REQUEST, createHeroSaga);
     yield takeLatest(actions.DELETE_HERO_REQUEST, deleteHeroSaga);
+    yield takeLatest(actions.DELETE_HERO_SUCCESS, getHeroesSaga);
     yield takeLatest(actions.PATCH_HERO_REQUEST, patchHeroSaga);
 
 }

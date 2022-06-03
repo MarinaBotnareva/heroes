@@ -34,7 +34,7 @@ function HeroPage (props) {
 
     useEffect(() => {
       loadHeroes();
-      }, [actions, heroes.page, heroes.list]
+      }, [actions, heroes.page]
     );
 
     function loadnextPage () {
@@ -59,20 +59,22 @@ function HeroPage (props) {
     }
     
     return (
-      <div>
+      <div className='main'>
         <AddForm actions={actions}/>
         <button name='prev' onClick={()=>{loadprevPage()}}>{'<'}</button>
         {heroes.page}
         <button name='next' onClick={()=>{loadnextPage()}}>{'>'}</button>
-        <ul>
+        <ul className='list'>
           {heroes.list.map(h => (
             <li key={h.id}>
+              <div className='card'>
               <div>
               {h.nickname} ({h.realName})
               </div>
               <img src={h.image}  alt='photo'/>
               <button onClick={()=>{handleDeleteHero(h.id)}}>X</button>
               <button name={h.id} onClick={startEditing}>edit</button>
+              </div>
             </li>
           ))}
         </ul>
